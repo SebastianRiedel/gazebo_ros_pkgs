@@ -29,7 +29,7 @@ def spawn_urdf_model_client(model_name, model_xml, robot_namespace, initial_pose
     try:
       spawn_urdf_model = rospy.ServiceProxy(gazebo_namespace+'/spawn_urdf_model', SpawnModel)
       rospy.loginfo("Calling service %s/spawn_urdf_model"%gazebo_namespace)
-      resp = spawn_urdf_model(model_name, model_xml, robot_namespace, initial_pose, reference_frame)
+      resp = spawn_urdf_model(model_name, model_xml, robot_namespace, initial_pose, reference_frame, "0")
       rospy.loginfo("Spawn status: %s"%resp.status_message)
       return resp.success
     except rospy.ServiceException, e:

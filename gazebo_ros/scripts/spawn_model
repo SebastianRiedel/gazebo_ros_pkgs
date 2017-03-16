@@ -258,7 +258,7 @@ class SpawnModel():
         initial_pose.position.z = self.initial_xyz[2]
         # convert rpy to quaternion for Pose message
         tmpq = tft.quaternion_from_euler(self.initial_rpy[0],self.initial_rpy[1],self.initial_rpy[2])
-        q = Quaternion(tmpq[0],tmpq[1],tmpq[2],tmpq[3])
+        q = Quaternion(tmpq[0],tmpq[1],tmpq[2],tmpq[3], "0")
         initial_pose.orientation = q;
 
         # spawn model
